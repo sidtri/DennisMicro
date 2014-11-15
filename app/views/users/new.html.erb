@@ -1,7 +1,7 @@
-<div class="hero">
+<!--<div class="her">
     <p class="large brandon">Harry&#8217;s is live</p>
     <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
-</div>
+</div> -->
 
 <div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
     <% if Rails.application.config.ended %>
@@ -10,7 +10,13 @@
         <p class="go-to brandon">In the meantime, head to  <a href="http://www.harrys.com/">WWW.HARRYS.COM</a></p>
         <p class="again brandon">Thank You Again!</p>
     <% else %>
+         <div style="text-align:center; font-weight:bold; font-size:20px; ">
+            <p style="color: #074E6F;text-transform: uppercase;font-size: 31px;font-weight: bold;"><i>Resale Millionaire</i></p>
+            <p style='font-family: "cartoonist";font-size: 36px;font-weight: bold;color: #074E6F;'><i>The Book is coming</i></p>
+
+         </div>
         <div class="key"></div>
+
         <p class="byline brandon">Be the first to know</p>
         <%= form_for @user, :url => { :action => "create" } do |f| %>
             <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>

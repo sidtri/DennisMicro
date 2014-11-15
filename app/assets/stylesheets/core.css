@@ -12,6 +12,11 @@
  *= require_self
  */
 
+ @font-face {
+    font-family: cartoonist;
+    src: url(/assets/fonts/cartoonist.woff);
+}
+
 
 form{
 	margin-bottom: 0;
@@ -36,6 +41,7 @@ html.home{
 
 #home{
 	padding-bottom: 50px;
+	margin-top:250px; 
 }
 
 #home .page-content{
