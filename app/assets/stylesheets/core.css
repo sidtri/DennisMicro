@@ -41,7 +41,6 @@ html.home{
 
 #home{
 	padding-bottom: 50px;
-	margin-top:250px; 
 }
 
 #home .page-content{
@@ -123,8 +122,8 @@ html.home{
 	width: 143px;
 	background: #074E6F;
 	float: left;
-	height: 37px;
-	line-height: 37px;
+	height: 33px;
+	line-height: 32px;
 	color: #FFF;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -277,7 +276,7 @@ html.home{
 }
 
 #refer .header .content{
-	width: 315px;
+	width: 500px;
 	margin: 0 auto;
 }
 
@@ -370,7 +369,8 @@ html.home{
 
 #refer .share-wrap .copy-link{
 	border: 1px solid #D1D0C7;
-	background: #FFF;
+	background: #3465a4;
+	color: white;
 	padding: 10px 0;
 	width: 320px;
 	text-transform: none;
@@ -477,7 +477,7 @@ html.home{
 	font-size: 14px;
 	float: left;
 	margin-right: 68px;
-	width: 165px;
+	width: 290px;
 	font-weight: bold;
 }
 
@@ -494,7 +494,7 @@ html.home{
 #refer .prizes .products li.product{
 	height: 100%;
 	color: #074E6F;
-	width: 125px;
+	width: 80px;
 	margin-right: 129px;
 	float: left;
 	position: relative;
@@ -697,7 +697,14 @@ only screen and (min-device-pixel-ratio: 2) {
 
 
 
-
+.verticle-middle{
+	-webkit-transform: translateY(100%);
+	   -moz-transform: translateY(100%);
+	    -ms-transform: translateY(100%);
+	     -o-transform: translateY(100%);
+	        transform: translateY(100%);
+	   
+}
 
 
 
