@@ -20,5 +20,7 @@ test:
 
 production:
   adapter: postgresql
-  database: prelaunchr
+  database: awberpd
   host: localhost
+  username: postgres
+  password: siddhusid

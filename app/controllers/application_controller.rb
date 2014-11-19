@@ -24,4 +24,12 @@ class ApplicationController < ActionController::Base
             end
         end
     end
+    def aweber 
+        oauth = AWeber::OAuth.new('AkmnOff8pFZ2sOXtdL1WgVel', 'tZNCf6Bc8vtM6YzmaQDb6TWvujwnqAYv30IJy23x')
+        #Rather than authorizing with the verification code, we use the token and secret
+        oauth.authorize_with_access('AglaJeUdqn51h2xY370tavHl', 'nChyvWf5WcFnZfgQ1DvTU234IyuGxsMfKV03E8Tl')
+        aweber = AWeber::Base.new(oauth)
+        resale = aweber.account.lists[3565190]
+        resale
+    end
 end

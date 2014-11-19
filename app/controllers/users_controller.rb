@@ -4,9 +4,7 @@ class UsersController < ApplicationController
     def new
         @bodyId = 'home'
         @is_mobile = mobile_device?
-
         @user = User.new
-
         respond_to do |format|
             format.html # new.html.erb
         end
@@ -15,15 +13,16 @@ class UsersController < ApplicationController
     def create
         # Get user to see if they have already signed up
         @user = User.find_by_email(params[:user][:email]);
-            
+        
         # If user doesnt exist, make them, and attach referrer
         if @user.nil?
-
-            cur_ip = IpAddress.find_by_address(request.env['HTTP_X_FORWARDED_FOR'])
+            require 'open-uri'
+            @remoteip = open('http://whatismyip.akamai.com').read 
+            cur_ip = IpAddress.find_by_address(@remoteip)
 
             if !cur_ip
                 cur_ip = IpAddress.create(
-                    :address => request.env['HTTP_X_FORWARDED_FOR'],
+                    :address => @remoteip,
                     :count => 0
                 )
             end
@@ -42,14 +41,18 @@ class UsersController < ApplicationController
             puts '------------'
             puts @referred_by.email if @referred_by
             puts params[:user][:email].inspect
-            puts request.env['HTTP_X_FORWARDED_FOR'].inspect
+            puts @remoteip
             puts '------------'
-
+            
             if !@referred_by.nil?
                 @user.referrer = @referred_by
             end
 
             @user.save
+
+            # send mails using aweber 
+            @parsed_code = "#{CGI::escape(root_url)}?ref=#{CGI::escape(@user.referral_code)}"
+            aweber.subscribers.create("email" => params[:user][:email], "custom_fields" => {"referral_code" => root_url+"?ref="+@user.referral_code, "parsed_code" => @parsed_code})
         end
 
         # Send them over refer action
@@ -88,6 +91,10 @@ class UsersController < ApplicationController
         redirect_to root_path, :status => 404
     end
 
+    def email
+        
+    end
+
     private 
 
     def skip_first_page
@@ -100,5 +107,4 @@ class UsersController < ApplicationController
             end
         end
     end
-
 end

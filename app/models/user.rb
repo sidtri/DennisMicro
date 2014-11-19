@@ -15,25 +15,25 @@ class User < ActiveRecord::Base
             'count' => 5,
             "html" => "Grocery<br>Tote",
             "class" => "two",
-            "image" =>  ActionController::Base.helpers.asset_path("refer/B110.jpg")
+            "image" =>  ActionController::Base.helpers.asset_path("refer/pop.png")
         },
         {
             'count' => 10,
             "html" => "Tee<br>Shirt",
             "class" => "three",
-            "image" => ActionController::Base.helpers.asset_path("refer/bangray-300x500.png")
+            "image" => ActionController::Base.helpers.asset_path("refer/tshirt.png")
         },
         {
             'count' => 25,
             "html" => "Autographed<br>Book",
             "class" => "four",
-            "image" => ActionController::Base.helpers.asset_path("refer/d3974.jpg")
+            "image" => ActionController::Base.helpers.asset_path("refer/book.png")
         },
         {
             'count' => 50,
             "html" => "Tote, Tee Shirt,<br>Autograph book",
             "class" => "five",
-            "image" => ActionController::Base.helpers.asset_path("refer/left2.jpg")
+            "image" => ActionController::Base.helpers.asset_path("refer/3.png")
         }
     ]
 

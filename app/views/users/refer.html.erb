@@ -14,7 +14,7 @@
             <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
             <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn ResaleMillion goods for<br>each friend who signs up.</p>
             <div class="copy-link brandon"><%= root_url %>?ref=<%= @user.referral_code %></div>
-            <% twitter_message = "#I can’t wait for @ResaleMillionaire book to be published find out why #{root_url}?ref=#{@user.referral_code} to site" %>
+            <% twitter_message = "#I can’t wait for @ResaleMillionaire book to be published. I'm going to get it for free. " %>
             <div class="social-links">
                 <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=ResaleMillionaire" class="fb" target="_blank"></a>
                 <div class="sep"></div>
