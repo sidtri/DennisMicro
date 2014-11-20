@@ -16,8 +16,7 @@ class UsersController < ApplicationController
         
         # If user doesnt exist, make them, and attach referrer
         if @user.nil?
-            require 'open-uri'
-            @remoteip = open('http://whatismyip.akamai.com').read 
+            @remoteip = request.remote_ip
             cur_ip = IpAddress.find_by_address(@remoteip)
 
             if !cur_ip
